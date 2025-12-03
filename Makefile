@@ -1,2 +1,5 @@
 run:
-	docker build . -t test && docker run test
+	make build && docker run --rm -it -v $pwd:/root/env container
+
+build:
+	docker build . -t container
